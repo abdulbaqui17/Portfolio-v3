@@ -83,7 +83,7 @@ export function Hero() {
         <span className="flex items-center gap-1.5"><Calendar size={11} /> LOCAL TIME {time} IST</span>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-10 lg:gap-16 items-center mb-16">
+      <div className="flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-14 mb-16">
         <div className="order-2 lg:order-1">
           <h1 className="font-bold leading-[0.85] tracking-tighter mb-8" style={{ fontSize: "clamp(2.75rem, 9vw, 7rem)" }}>
             <span className="inline-block relative">
@@ -141,9 +141,9 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="order-1 lg:order-2 flex flex-col items-center lg:items-start gap-6">
+        <div className="order-1 lg:order-2 lg:ml-auto flex flex-col items-center lg:items-start gap-6">
           <div className="relative">
-            <div className="w-56 h-56 md:w-64 md:h-64 rounded-2xl overflow-hidden border-2 border-orange-500/40 bg-black relative">
+            <div className="w-72 h-72 md:w-96 md:h-96 rounded-2xl overflow-hidden border-2 border-orange-500/40 bg-black relative">
               <PixelatedCanvas
                 src="https://avatars.githubusercontent.com/u/150225239?v=4"
                 width={448}
