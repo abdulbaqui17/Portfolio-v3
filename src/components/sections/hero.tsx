@@ -1,0 +1,142 @@
+"use client";
+import { ArrowRight, Calendar, GraduationCap, MapPin, Volume2 } from "lucide-react";
+import { useIstClock } from "@/hooks/use-ist-clock";
+
+const stack = [
+  "TypeScript",
+  "Node.js",
+  "Next.js 14",
+  "React",
+  "Rust",
+  "Solana / Anchor",
+  "PostgreSQL",
+  "Redis",
+  "Kafka",
+  "Docker",
+  "AWS",
+  "WebSockets",
+  "TimescaleDB",
+  "BullMQ",
+];
+
+export function Hero() {
+  const time = useIstClock();
+
+  return (
+    <section id="top" className="min-h-screen flex flex-col justify-center px-6 md:px-10 pt-32 pb-20 max-w-7xl mx-auto relative">
+      <div className="flex flex-wrap gap-4 md:gap-6 text-base font-mono text-neutral-300 mb-8 tracking-wider items-center">
+        <span className="flex items-center gap-1.5"><MapPin size={11} /> HYDERABAD · IN</span>
+        <span className="flex items-center gap-1.5"><GraduationCap size={11} /> B.TECH CS · 2026</span>
+        <span className="flex items-center gap-1.5"><Calendar size={11} /> LOCAL TIME {time} IST</span>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-10 lg:gap-16 items-center mb-16">
+        <div className="order-2 lg:order-1">
+          <h1 className="font-bold leading-[0.85] tracking-tighter mb-8" style={{ fontSize: "clamp(3.5rem, 12vw, 10rem)" }}>
+            <span className="inline-block relative">
+              <span
+                className="bg-clip-text text-transparent"
+                style={{
+                  backgroundImage: "linear-gradient(110deg, #fff 40%, #FFB547 50%, #FF6B2C 55%, #fff 65%)",
+                  backgroundSize: "200% 100%",
+                  animation: "shimmer 4s linear infinite",
+                }}
+              >
+                Founding
+              </span>
+            </span>
+            <br />
+            <span
+              className="italic font-light"
+              style={{
+                background: "linear-gradient(135deg, #FF6B2C, #F2B56A)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
+            >
+              Engineer.
+            </span>
+          </h1>
+
+          <p className="max-w-2xl text-xl md:text-3xl text-neutral-100 leading-relaxed mb-10 font-light">
+            Full-stack TypeScript, Rust on Solana, AI that runs offline. Looking for an early team where the roadmap is
+            short and the stakes are real.
+          </p>
+
+          <div className="flex flex-wrap gap-3 items-center">
+            <a
+              href="mailto:abdulbaquiiit7@gmail.com"
+              className="group relative overflow-hidden rounded-full px-7 py-3.5 bg-orange-500 text-black font-medium text-lg transition-all hover:scale-[1.02]"
+            >
+              <span className="absolute inset-0 overflow-hidden rounded-full">
+                <span
+                  className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700"
+                  style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent)" }}
+                />
+              </span>
+              <span className="relative flex items-center gap-2">
+                Email me <ArrowRight size={16} />
+              </span>
+            </a>
+            <a
+              href="#work"
+              className="group rounded-full px-7 py-3.5 border border-white/15 text-lg text-neutral-200 hover:border-white/50 transition-all flex items-center gap-2"
+            >
+              See the work <span className="group-hover:translate-y-0.5 transition-transform">↓</span>
+            </a>
+          </div>
+        </div>
+
+        <div className="order-1 lg:order-2 flex flex-col items-center lg:items-start gap-6">
+          <div className="relative">
+            <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-2 border-orange-500/40 bg-neutral-900 relative">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://avatars.githubusercontent.com/u/150225239?v=4"
+                alt="Abdul Baqui"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            </div>
+            <div className="absolute -bottom-2 -right-2 w-8 h-8 rounded-full bg-emerald-500 border-[3px] border-black flex items-center justify-center">
+              <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
+            </div>
+          </div>
+          <div className="text-center lg:text-left">
+            <div className="text-xl text-neutral-200 mb-1">Hi, I&apos;m</div>
+            <div className="flex items-center justify-center lg:justify-start gap-2 flex-wrap">
+              <span className="text-2xl md:text-3xl text-neutral-100">Abdul Baqui</span>
+              <button
+                type="button"
+                className="p-1.5 rounded-full border border-white/15 hover:border-orange-500/40 transition-colors text-neutral-300 hover:text-orange-400"
+                title="Pronounced: Ab-dul Bah-kee"
+              >
+                <Volume2 size={14} />
+              </button>
+            </div>
+            <div className="text-base text-neutral-300 italic mt-1">(Ab-dul Bah-kee)</div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        className="mt-20 border-y border-white/15 py-4 overflow-hidden relative"
+        style={{
+          maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+          WebkitMaskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+        }}
+      >
+        <div
+          className="flex gap-12 whitespace-nowrap font-mono text-lg text-neutral-300"
+          style={{ animation: "marquee 40s linear infinite", width: "max-content" }}
+        >
+          {[...stack, ...stack].map((s, i) => (
+            <span key={i} className="flex items-center gap-3">
+              {s} <span className="text-orange-500 text-[12px]">✦</span>
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
