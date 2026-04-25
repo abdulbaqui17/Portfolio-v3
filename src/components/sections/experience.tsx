@@ -41,7 +41,7 @@ export function Experience() {
   return (
     <section id="experience" className="px-6 md:px-10 py-24 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-[120px_1fr] gap-8 mb-10 items-baseline pb-6 border-b border-white/15">
-        <div className="font-mono text-base text-orange-400 tracking-widest">03 / EXPERIENCE</div>
+        <div className="font-mono text-base text-orange-400 tracking-widest">04 / EXPERIENCE</div>
         <h2 className="font-light tracking-tight" style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}>
           Where I&apos;ve <span className="italic" style={{ color: "#F2B56A" }}>shipped</span>
         </h2>
@@ -59,7 +59,7 @@ export function Experience() {
                   <Briefcase size={14} className="text-orange-400" />
                   <span className="font-mono text-[14px] text-orange-400 uppercase tracking-widest">{e.period}</span>
                 </div>
-                <h3 className="text-2xl md:text-3xl font-light tracking-tight leading-tight">{e.role}</h3>
+                <h3 className="text-2xl md:text-3xl font-normal tracking-tight leading-tight">{e.role}</h3>
                 <div className="text-lg text-neutral-200 mt-1">
                   {e.company} · <span className="text-neutral-300">{e.location}</span>
                 </div>
@@ -67,8 +67,8 @@ export function Experience() {
             </div>
             <ul className="space-y-2 mb-5">
               {e.bullets.map((b, j) => (
-                <li key={j} className="flex gap-3 text-lg text-neutral-100 leading-relaxed">
-                  <span className="text-orange-500 mt-1.5 flex-shrink-0">·</span>
+                <li key={j} className="flex gap-3 text-lg text-neutral-100 leading-relaxed font-medium">
+                  <span className="text-orange-500 mt-1.5 shrink-0">·</span>
                   <span>{b}</span>
                 </li>
               ))}

@@ -13,13 +13,13 @@ export function OSS() {
   return (
     <section id="oss" className="px-6 md:px-10 py-24 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-[120px_1fr] gap-8 mb-10 items-baseline pb-6 border-b border-white/15">
-        <div className="font-mono text-base text-orange-400 tracking-widest">04 / OSS</div>
+        <div className="font-mono text-base text-orange-400 tracking-widest">05 / OSS</div>
         <h2 className="font-light tracking-tight" style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}>
           Shipped to <span className="italic" style={{ color: "#F2B56A" }}>production</span> code
         </h2>
       </div>
 
-      <p className="text-neutral-200 max-w-xl mb-10 leading-relaxed text-xl font-light">
+      <p className="text-neutral-200 max-w-xl mb-10 leading-relaxed text-xl font-medium">
         Real PRs against tools real teams use — Supabase, Cal.com. The fastest way to prove I can read a stranger&apos;s
         codebase and not break it.
       </p>
@@ -31,7 +31,7 @@ export function OSS() {
             className="relative rounded-xl border border-white/15 bg-neutral-950/60 p-5 flex flex-col gap-3"
           >
             <div className="font-mono text-[14px] text-orange-200">{pr.repo}</div>
-            <div className="text-xl font-light tracking-tight leading-snug">{pr.title}</div>
+            <div className="text-xl font-normal tracking-tight leading-snug">{pr.title}</div>
             <div className="flex justify-between items-center mt-auto pt-3 border-t border-white/15">
               <span className="font-mono text-[14px] text-neutral-300">{pr.num}</span>
               <span className="text-[13px] uppercase tracking-widest px-2 py-0.5 rounded-full border border-emerald-500/20 bg-emerald-500/5 text-emerald-400">
