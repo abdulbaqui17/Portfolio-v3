@@ -1,6 +1,7 @@
 "use client";
 import { ArrowRight, Calendar, GraduationCap, MapPin, Volume2 } from "lucide-react";
 import { useIstClock } from "@/hooks/use-ist-clock";
+import { PixelatedCanvas } from "@/components/pixelated-canvas";
 
 const stack = [
   "TypeScript",
@@ -59,9 +60,9 @@ export function Hero() {
             </span>
           </h1>
 
-          <p className="max-w-2xl text-xl md:text-3xl text-neutral-100 leading-relaxed mb-10 font-light">
-            Full-stack TypeScript, Rust on Solana, AI that runs offline. Looking for an early team where the roadmap is
-            short and the stakes are real.
+          <p className="max-w-2xl text-xl md:text-3xl text-neutral-100 leading-relaxed mb-10 font-medium">
+            Full-stack TypeScript, Rust on Solana, AI that runs offline. I build the product — and I bring the audience
+            that finds it. Looking for an early team where the roadmap is short and the stakes are real.
           </p>
 
           <div className="flex flex-wrap gap-3 items-center">
@@ -90,12 +91,23 @@ export function Hero() {
 
         <div className="order-1 lg:order-2 flex flex-col items-center lg:items-start gap-6">
           <div className="relative">
-            <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-2 border-orange-500/40 bg-neutral-900 relative">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+            <div className="w-80 h-80 md:w-md md:h-112 rounded-2xl overflow-hidden border-2 border-orange-500/40 bg-black relative">
+              <PixelatedCanvas
                 src="https://avatars.githubusercontent.com/u/150225239?v=4"
-                alt="Abdul Baqui"
-                className="absolute inset-0 w-full h-full object-cover"
+                width={448}
+                height={448}
+                cellSize={4}
+                dotScale={0.9}
+                shape="square"
+                backgroundColor="#000000"
+                dropoutStrength={0.35}
+                distortionStrength={6}
+                distortionRadius={120}
+                distortionMode="swirl"
+                followSpeed={0.22}
+                tintColor="#FF6B2C"
+                tintStrength={0.08}
+                style={{ width: "100%", height: "100%" }}
               />
             </div>
             <div className="absolute -bottom-2 -right-2 w-8 h-8 rounded-full bg-emerald-500 border-[3px] border-black flex items-center justify-center">

@@ -2,6 +2,7 @@
 import type { LucideIcon } from "lucide-react";
 import { ArrowUpRight, Code2, GitBranch, Rocket, Sparkles, Trophy, Zap } from "lucide-react";
 import type { MouseEvent } from "react";
+import { HoverStack } from "@/components/hover-stack";
 
 type Project = {
   title: string;
@@ -94,7 +95,7 @@ export function Work() {
   return (
     <section id="work" className="px-6 md:px-10 py-24 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-[120px_1fr] gap-8 mb-10 items-baseline pb-6 border-b border-white/15">
-        <div className="font-mono text-base text-orange-400 tracking-widest">02 / WORK</div>
+        <div className="font-mono text-base text-orange-400 tracking-widest">03 / WORK</div>
         <h2 className="font-light tracking-tight" style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}>
           Selected <span className="italic" style={{ color: "#F2B56A" }}>projects</span>
         </h2>
@@ -104,12 +105,12 @@ export function Work() {
         {projects.map((p, i) => {
           const Icon = p.icon;
           return (
+            <HoverStack key={i} tilt={i % 2 === 0 ? -16 : 16} scale={1.04} className="relative rounded-2xl">
             <a
-              key={i}
               href={p.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative rounded-2xl border border-white/15 bg-neutral-950/60 backdrop-blur-sm overflow-hidden transition-all hover:border-orange-500/40"
+              className="group relative block rounded-2xl border border-white/15 bg-neutral-950/60 backdrop-blur-sm overflow-hidden transition-colors hover:border-orange-500/40"
               onMouseMove={handleMove}
             >
               <div
@@ -140,9 +141,9 @@ export function Work() {
                     className="text-neutral-400 group-hover:text-orange-400 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all"
                   />
                 </div>
-                <h3 className="text-3xl md:text-4xl font-light tracking-tight mb-1 leading-none">{p.title}</h3>
+                <h3 className="text-3xl md:text-4xl font-normal tracking-tight mb-1 leading-none">{p.title}</h3>
                 <div className="text-base font-mono text-orange-300 mb-3">{p.sub}</div>
-                <p className="text-lg text-neutral-200 leading-relaxed mb-auto">{p.desc}</p>
+                <p className="text-lg text-neutral-200 leading-relaxed mb-auto font-medium">{p.desc}</p>
                 <div className="flex flex-wrap gap-1.5 mt-4 pt-4 border-t border-white/15">
                   {p.stack.map((s) => (
                     <span key={s} className="text-[14px] font-mono px-2 py-0.5 rounded-full border border-white/15 text-neutral-300">
@@ -152,6 +153,7 @@ export function Work() {
                 </div>
               </div>
             </a>
+            </HoverStack>
           );
         })}
       </div>
