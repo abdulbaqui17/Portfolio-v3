@@ -36,7 +36,7 @@ export function Hero() {
 
   return (
     <section id="top" className="min-h-screen flex flex-col justify-center px-6 md:px-10 pt-32 pb-20 max-w-6xl mx-auto relative">
-      <div className="flex flex-wrap gap-3 md:gap-4 mb-6 items-center perspective-[1000px]">
+      <div className="flex flex-wrap gap-2 md:gap-2.5 mb-5 items-center perspective-[1000px]">
         {socials.map(({ label, href, Icon }, i) => (
           <motion.a
             key={label}
@@ -69,15 +69,15 @@ export function Hero() {
             }}
             whileTap={{ scale: 0.96 }}
             style={{ transformStyle: "preserve-3d" }}
-            className="group relative flex items-center gap-2.5 px-4 py-2 rounded-full border border-white/15 bg-neutral-950/60 text-lg md:text-xl font-mono text-neutral-100 hover:border-orange-500/50 hover:text-orange-300 will-change-transform"
+            className="group relative flex items-center gap-2.5 px-4 py-2 rounded-full border border-white/15 bg-neutral-950/60 text-base md:text-lg font-mono text-neutral-100 hover:border-orange-500/50 hover:text-orange-300 will-change-transform"
           >
-            <Icon size={20} className="text-neutral-200 group-hover:text-orange-400 transition-colors" />
+            <Icon size={18} className="text-neutral-200 group-hover:text-orange-400 transition-colors" />
             {label}
           </motion.a>
         ))}
       </div>
 
-      <div className="flex flex-wrap gap-4 md:gap-6 text-base font-mono text-neutral-300 mb-8 tracking-wider items-center">
+      <div className="flex flex-wrap gap-3 md:gap-5 text-xs md:text-sm font-mono text-neutral-300 mb-8 tracking-wider items-center">
         <span className="flex items-center gap-1.5"><MapPin size={11} /> HYDERABAD · IN</span>
         <span className="flex items-center gap-1.5"><GraduationCap size={11} /> B.TECH CS · 2026</span>
         <span className="flex items-center gap-1.5"><Calendar size={11} /> LOCAL TIME {time} IST</span>

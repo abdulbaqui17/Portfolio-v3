@@ -1,6 +1,7 @@
 import Backdrop from "@/components/backdrop";
 import Nav from "@/components/nav";
 import Footer from "@/components/footer";
+import { ThemePicker } from "@/components/theme-picker";
 import { Hero } from "@/components/sections/hero";
 import { Now } from "@/components/sections/now";
 import { Work } from "@/components/sections/work";
@@ -33,6 +34,7 @@ export default function Home() {
         <Contact />
         <Footer />
       </div>
+      <ThemePicker />
     </div>
   );
 }
