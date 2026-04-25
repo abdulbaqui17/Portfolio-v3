@@ -85,7 +85,7 @@ export function Hero() {
 
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-10 lg:gap-16 items-center mb-16">
         <div className="order-2 lg:order-1">
-          <h1 className="font-bold leading-[0.85] tracking-tighter mb-8" style={{ fontSize: "clamp(3rem, 10vw, 8rem)" }}>
+          <h1 className="font-bold leading-[0.85] tracking-tighter mb-8" style={{ fontSize: "clamp(2.75rem, 9vw, 7rem)" }}>
             <span className="inline-block relative">
               <span
                 className="bg-clip-text text-transparent"
@@ -112,7 +112,7 @@ export function Hero() {
             </span>
           </h1>
 
-          <p className="max-w-2xl text-lg md:text-2xl text-neutral-100 leading-relaxed mb-10 font-medium">
+          <p className="max-w-2xl text-base md:text-xl text-neutral-100 leading-relaxed mb-10 font-medium">
             Full-stack TypeScript, Rust on Solana, AI that runs offline. I build the product — and I bring the audience
             that finds it. Looking for an early team where the roadmap is short and the stakes are real.
           </p>
