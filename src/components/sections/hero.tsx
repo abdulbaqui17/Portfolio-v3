@@ -1,23 +1,34 @@
 "use client";
-import { ArrowRight, Calendar, GraduationCap, MapPin, Volume2 } from "lucide-react";
+import { ArrowRight, Calendar, GraduationCap, MapPin, Terminal, Volume2 } from "lucide-react";
+import { motion } from "framer-motion";
 import { useIstClock } from "@/hooks/use-ist-clock";
 import { PixelatedCanvas } from "@/components/pixelated-canvas";
+import { TechSticker } from "@/components/tech-sticker";
+import { Github, Instagram, Linkedin, Youtube } from "@/components/brand-icons";
 
-const stack = [
-  "TypeScript",
-  "Node.js",
-  "Next.js 14",
-  "React",
-  "Rust",
-  "Solana / Anchor",
-  "PostgreSQL",
-  "Redis",
-  "Kafka",
-  "Docker",
-  "AWS",
-  "WebSockets",
-  "TimescaleDB",
-  "BullMQ",
+const socials = [
+  { label: "abdulbaqui17", href: "https://github.com/abdulbaqui17", Icon: Github },
+  { label: "abdul-baqui", href: "https://linkedin.com/in/abdul-baqui", Icon: Linkedin },
+  { label: "@abdul_baqui_10", href: "https://twitter.com/abdul_baqui_10", Icon: Terminal },
+  { label: "@abdul_intern", href: "https://instagram.com/abdul_intern", Icon: Instagram },
+  { label: "@abdulintern", href: "https://www.youtube.com/@abdulintern", Icon: Youtube },
+];
+
+const stack: { name: string }[] = [
+  { name: "TypeScript" },
+  { name: "Node.js" },
+  { name: "Next.js 14" },
+  { name: "React" },
+  { name: "Rust" },
+  { name: "Solana / Anchor" },
+  { name: "PostgreSQL" },
+  { name: "Redis" },
+  { name: "Kafka" },
+  { name: "Docker" },
+  { name: "AWS" },
+  { name: "WebSockets" },
+  { name: "TimescaleDB" },
+  { name: "BullMQ" },
 ];
 
 export function Hero() {
@@ -25,6 +36,47 @@ export function Hero() {
 
   return (
     <section id="top" className="min-h-screen flex flex-col justify-center px-6 md:px-10 pt-32 pb-20 max-w-7xl mx-auto relative">
+      <div className="flex flex-wrap gap-3 md:gap-4 mb-6 items-center perspective-[1000px]">
+        {socials.map(({ label, href, Icon }, i) => (
+          <motion.a
+            key={label}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ y: 0, rotateX: 0, rotateY: 0 }}
+            animate={{
+              y: [0, -8, 0, 4, 0],
+              rotateX: [6, -4, 6],
+              rotateY: [-8, 8, -8],
+              boxShadow: [
+                "0 0 0px rgba(255,107,44,0.0), 0 8px 18px rgba(0,0,0,0.35)",
+                "0 0 22px rgba(255,107,44,0.35), 0 14px 28px rgba(0,0,0,0.45)",
+                "0 0 0px rgba(255,107,44,0.0), 0 8px 18px rgba(0,0,0,0.35)",
+              ],
+            }}
+            transition={{
+              duration: 5 + i * 0.4,
+              delay: i * 0.25,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            whileHover={{
+              scale: 1.08,
+              y: -10,
+              rotateX: 0,
+              rotateY: 0,
+              transition: { duration: 0.25 },
+            }}
+            whileTap={{ scale: 0.96 }}
+            style={{ transformStyle: "preserve-3d" }}
+            className="group relative flex items-center gap-2.5 px-4 py-2 rounded-full border border-white/15 bg-neutral-950/60 text-lg md:text-xl font-mono text-neutral-100 hover:border-orange-500/50 hover:text-orange-300 will-change-transform"
+          >
+            <Icon size={20} className="text-neutral-200 group-hover:text-orange-400 transition-colors" />
+            {label}
+          </motion.a>
+        ))}
+      </div>
+
       <div className="flex flex-wrap gap-4 md:gap-6 text-base font-mono text-neutral-300 mb-8 tracking-wider items-center">
         <span className="flex items-center gap-1.5"><MapPin size={11} /> HYDERABAD · IN</span>
         <span className="flex items-center gap-1.5"><GraduationCap size={11} /> B.TECH CS · 2026</span>
@@ -139,12 +191,14 @@ export function Hero() {
         }}
       >
         <div
-          className="flex gap-12 whitespace-nowrap font-mono text-lg text-neutral-300"
+          className="flex gap-10 whitespace-nowrap font-mono text-lg text-neutral-300"
           style={{ animation: "marquee 40s linear infinite", width: "max-content" }}
         >
-          {[...stack, ...stack].map((s, i) => (
+          {[...stack, ...stack].map((item, i) => (
             <span key={i} className="flex items-center gap-3">
-              {s} <span className="text-orange-500 text-[12px]">✦</span>
+              <TechSticker name={item.name} size={26} />
+              <span>{item.name}</span>
+              <span className="text-orange-500 text-[12px]">✦</span>
             </span>
           ))}
         </div>

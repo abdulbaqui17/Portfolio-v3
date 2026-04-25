@@ -1,14 +1,15 @@
 import { GraduationCap, Trophy } from "lucide-react";
+import { Reveal } from "@/components/reveal";
 
 export function Background() {
   return (
     <section id="education" className="px-6 md:px-10 py-24 max-w-7xl mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-[120px_1fr] gap-8 mb-10 items-baseline pb-6 border-b border-white/15">
+      <Reveal className="grid grid-cols-1 md:grid-cols-[120px_1fr] gap-8 mb-10 items-baseline pb-6 border-b border-white/15">
         <div className="font-mono text-base text-orange-400 tracking-widest">06 / BACKGROUND</div>
         <h2 className="font-light tracking-tight" style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}>
           School &amp; <span className="italic" style={{ color: "#F2B56A" }}>signals</span>
         </h2>
-      </div>
+      </Reveal>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="rounded-2xl border border-white/15 bg-neutral-950/60 p-6 md:p-8">

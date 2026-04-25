@@ -1,4 +1,6 @@
 import { BookOpen, Eye, Wrench } from "lucide-react";
+import { Reveal } from "@/components/reveal";
+import { TechSticker } from "@/components/tech-sticker";
 
 const currentlyReading = [
   { title: "The Mom Test", author: "Rob Fitzpatrick", tag: "founder interviewing" },
@@ -21,12 +23,12 @@ const currentlyBuilding = [
 export function Currently() {
   return (
     <section id="currently" className="px-6 md:px-10 py-24 max-w-7xl mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-[120px_1fr] gap-8 mb-10 items-baseline pb-6 border-b border-white/15">
+      <Reveal className="grid grid-cols-1 md:grid-cols-[120px_1fr] gap-8 mb-10 items-baseline pb-6 border-b border-white/15">
         <div className="font-mono text-base text-orange-400 tracking-widest">07 / CURRENTLY</div>
         <h2 className="font-light tracking-tight" style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}>
           What I&apos;m <span className="italic" style={{ color: "#F2B56A" }}>into</span> right now
         </h2>
-      </div>
+      </Reveal>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="rounded-2xl border border-white/15 bg-neutral-950/60 p-6 md:p-7">
@@ -54,7 +56,10 @@ export function Currently() {
             {currentlyWatching.map((w, i) => (
               <li key={i}>
                 <div className="text-lg text-neutral-200 leading-snug font-medium">{w.title}</div>
-                <div className="text-base text-neutral-300 italic">{w.channel}</div>
+                <div className="text-base text-neutral-300 italic flex items-center gap-2">
+                  <TechSticker name={w.channel} size={20} />
+                  {w.channel}
+                </div>
                 <div className="text-[14px] font-mono text-orange-300 mt-1 uppercase tracking-widest">— {w.tag}</div>
               </li>
             ))}

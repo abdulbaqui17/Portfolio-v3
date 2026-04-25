@@ -29,6 +29,18 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+@keyframes drift1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(22vw, 12vh) scale(1.15); }
+}
+@keyframes drift2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(-18vw, -14vh) scale(0.9); }
+}
+@keyframes drift3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(-10vw, 18vh) scale(1.2); }
+}
 @keyframes grad {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }

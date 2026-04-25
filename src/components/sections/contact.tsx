@@ -1,28 +1,28 @@
 import { ArrowRight, Mail, Terminal } from "lucide-react";
 import { Github, Instagram, Linkedin, Youtube } from "@/components/brand-icons";
+import { Reveal } from "@/components/reveal";
 
 export function Contact() {
   return (
     <section id="contact" className="px-6 md:px-10 py-32 max-w-5xl mx-auto text-center">
-      <div className="font-mono text-base text-orange-400 tracking-[0.3em] mb-10">— LET&apos;S TALK —</div>
-      <h2 className="font-light leading-[0.95] tracking-tighter mb-12" style={{ fontSize: "clamp(2.5rem, 9vw, 8rem)" }}>
-        Hire the person
-        <br />
-        <span
-          className="italic"
-          style={{
-            background: "linear-gradient(135deg, #FF6B2C, #F2B56A, #FF6B2C)",
-            backgroundSize: "200% 100%",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            backgroundClip: "text",
-            animation: "shimmer 4s linear infinite",
-          }}
-        >
-          before
-        </span>{" "}
-        the résumé does.
-      </h2>
+      <Reveal>
+        <div className="font-mono text-base text-orange-400 tracking-[0.3em] mb-10">— LET&apos;S TALK —</div>
+        <h2 className="font-light leading-[0.95] tracking-tighter mb-12" style={{ fontSize: "clamp(2.5rem, 9vw, 8rem)" }}>
+          Hire the person
+          <br />
+          <span
+            className="italic inline-block bg-clip-text text-transparent"
+            style={{
+              backgroundImage: "linear-gradient(135deg, #FF6B2C, #F2B56A, #FF6B2C)",
+              backgroundSize: "200% 100%",
+              animation: "shimmer 4s linear infinite",
+            }}
+          >
+            before
+          </span>{" "}
+          the résumé does.
+        </h2>
+      </Reveal>
 
       <div className="flex flex-wrap justify-center gap-4 mb-8">
         <a

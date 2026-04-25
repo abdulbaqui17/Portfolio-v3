@@ -98,6 +98,45 @@ export default function Backdrop() {
 
   return (
     <>
+      <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 0 }}>
+        <div
+          className="absolute rounded-full"
+          style={{
+            width: "640px",
+            height: "640px",
+            top: "-12%",
+            left: "-8%",
+            background: "radial-gradient(circle, rgba(255,107,44,0.16), transparent 70%)",
+            filter: "blur(40px)",
+            animation: "drift1 26s ease-in-out infinite",
+          }}
+        />
+        <div
+          className="absolute rounded-full"
+          style={{
+            width: "560px",
+            height: "560px",
+            bottom: "-6%",
+            right: "-6%",
+            background: "radial-gradient(circle, rgba(96,165,250,0.10), transparent 70%)",
+            filter: "blur(55px)",
+            animation: "drift2 34s ease-in-out infinite",
+          }}
+        />
+        <div
+          className="absolute rounded-full"
+          style={{
+            width: "720px",
+            height: "720px",
+            top: "30%",
+            right: "15%",
+            background: "radial-gradient(circle, rgba(242,181,106,0.08), transparent 70%)",
+            filter: "blur(60px)",
+            animation: "drift3 30s ease-in-out infinite",
+          }}
+        />
+      </div>
+
       <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none" style={{ zIndex: 0 }} />
 
       <div

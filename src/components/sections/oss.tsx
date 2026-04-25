@@ -1,5 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import { Github } from "@/components/brand-icons";
+import { Reveal } from "@/components/reveal";
+import { TechSticker } from "@/components/tech-sticker";
 
 const oss = [
   { repo: "supabase/supabase", title: "Fix newline in SMS templates", num: "#43910", status: "merged" },
@@ -12,17 +14,29 @@ const oss = [
 export function OSS() {
   return (
     <section id="oss" className="px-6 md:px-10 py-24 max-w-7xl mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-[120px_1fr] gap-8 mb-10 items-baseline pb-6 border-b border-white/15">
+      <Reveal className="grid grid-cols-1 md:grid-cols-[120px_1fr] gap-8 mb-10 items-baseline pb-6 border-b border-white/15">
         <div className="font-mono text-base text-orange-400 tracking-widest">05 / OSS</div>
         <h2 className="font-light tracking-tight" style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}>
           Shipped to <span className="italic" style={{ color: "#F2B56A" }}>production</span> code
         </h2>
-      </div>
+      </Reveal>
 
-      <p className="text-neutral-200 max-w-xl mb-10 leading-relaxed text-xl font-medium">
+      <p className="text-neutral-200 max-w-xl mb-6 leading-relaxed text-xl font-medium">
         Real PRs against tools real teams use — Supabase, Cal.com. The fastest way to prove I can read a stranger&apos;s
         codebase and not break it.
       </p>
+
+      <div className="flex flex-wrap gap-2 mb-10">
+        {["Supabase", "Cal.com", "TypeScript", "React", "Next.js", "PostgreSQL", "GitHub"].map((s) => (
+          <span
+            key={s}
+            className="text-[15px] font-mono px-3.5 py-1.5 rounded-full border border-white/15 text-neutral-200 inline-flex items-center gap-2"
+          >
+            <TechSticker name={s} size={20} />
+            {s}
+          </span>
+        ))}
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mb-10">
         {oss.map((pr, i) => (
@@ -30,7 +44,10 @@ export function OSS() {
             key={i}
             className="relative rounded-xl border border-white/15 bg-neutral-950/60 p-5 flex flex-col gap-3"
           >
-            <div className="font-mono text-[14px] text-orange-200">{pr.repo}</div>
+            <div className="font-mono text-[15px] text-orange-200 flex items-center gap-2">
+              <TechSticker name={pr.repo} size={22} />
+              {pr.repo}
+            </div>
             <div className="text-xl font-normal tracking-tight leading-snug">{pr.title}</div>
             <div className="flex justify-between items-center mt-auto pt-3 border-t border-white/15">
               <span className="font-mono text-[14px] text-neutral-300">{pr.num}</span>
