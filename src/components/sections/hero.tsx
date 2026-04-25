@@ -143,7 +143,7 @@ export function Hero() {
 
         <div className="order-1 lg:order-2 flex flex-col items-center lg:items-start gap-6">
           <div className="relative">
-            <div className="w-80 h-80 md:w-md md:h-112 rounded-2xl overflow-hidden border-2 border-orange-500/40 bg-black relative">
+            <div className="w-56 h-56 md:w-64 md:h-64 rounded-2xl overflow-hidden border-2 border-orange-500/40 bg-black relative">
               <PixelatedCanvas
                 src="https://avatars.githubusercontent.com/u/150225239?v=4"
                 width={448}
