@@ -2,7 +2,7 @@ import { Reveal } from "@/components/reveal";
 
 export function Numbers() {
   return (
-    <section className="px-6 md:px-10 py-16 max-w-7xl mx-auto">
+    <section className="px-6 md:px-10 py-16 max-w-6xl mx-auto">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/5 rounded-2xl overflow-hidden border border-white/15">
         {[
           ["9+", "Supabase PRs"],

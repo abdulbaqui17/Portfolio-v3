@@ -35,7 +35,7 @@ export function Hero() {
   const time = useIstClock();
 
   return (
-    <section id="top" className="min-h-screen flex flex-col justify-center px-6 md:px-10 pt-32 pb-20 max-w-7xl mx-auto relative">
+    <section id="top" className="min-h-screen flex flex-col justify-center px-6 md:px-10 pt-32 pb-20 max-w-6xl mx-auto relative">
       <div className="flex flex-wrap gap-3 md:gap-4 mb-6 items-center perspective-[1000px]">
         {socials.map(({ label, href, Icon }, i) => (
           <motion.a
@@ -141,7 +141,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="order-1 lg:order-2 lg:ml-auto flex flex-col items-center lg:items-start gap-6">
+        <div className="order-1 lg:order-2 flex flex-col items-center lg:items-start gap-6">
           <div className="relative">
             <div className="w-72 h-72 md:w-96 md:h-96 rounded-2xl overflow-hidden border-2 border-orange-500/40 bg-black relative">
               <PixelatedCanvas
